@@ -7,60 +7,96 @@
 
 body {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
-}
-
-/*-------- Menu de Navegação --------*/
-nav {
-    width: 220px;
-    background-color: #2c3e50;
-    padding: 20px 10px;
-}
-
-nav h2 {
-    color: #ecf0f1;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    margin-bottom: 10px;
-}
-
-nav ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: #34495e;
-}
-
-nav ul li a:hover {
-    background-color: #1abc9c;
-}
-
-/* Conteúdo principal */
-main {
-    flex: 1;
-    padding: 30px;
     background-color: #f4f6f7;
 }
 
-h1 {
+/*-------- Menu de Navegação --------*/
+.top-bar {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.top-bar h1 {
+    color:#fff;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Ícone clicável dos três tracinhos */
+.hamburger {
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.hamburger:hover {
+    background-color: #34495e;
+}
+
+.layout-container {
+    display: flex;
+    flex: 1;
+}
+
+#menu-lista {
+    width: 220px;
+    background-color: #34495e;
+    padding: 20px 15px;
+    flex-shrink: 0;
+}
+
+#menu-lista.escondido {
+    display: none;
+}
+
+#menu-lista ul {
+    list-style: none;
+}
+
+#menu-lista ul li {
     margin-bottom: 10px;
+}
+
+#menu-lista ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    padding: 10px 12px;
+    border-radius: 4px;
+    background-color: #2c3e50;
+    transition: background-color 0.2s ease;
+}
+
+#menu-lista ul li a:hover {
+    background-color: #1abc9c;
+}
+
+/*-------- Conteúdo principal --------*/
+main {
+    flex: 1;
+    padding: 30px;
+    overflow-x: auto;
+}
+
+h1 {
+    margin-bottom: 20px;
     color: #333;
 }
 
 h2 {
-    margin-bottom: 20px;
-    color: #333;
-    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.1rem;
 }
 
 /*-------- Formulário --------*/
@@ -120,12 +156,4 @@ th, td {
 th {
     background-color: #34495e;
     color: white;
-}
-
-.mensagem {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    background-color: #d4edda;
-    color: #155724;
 }
